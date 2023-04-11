@@ -2,8 +2,7 @@
 
 ### 💡See the following example of what the project might look like after it's done. 
 
-![simulation](./simulation.gif)
-
+<img src="./simulation.gif" width="200">
 
 ## Mandatory Requirements:
 
