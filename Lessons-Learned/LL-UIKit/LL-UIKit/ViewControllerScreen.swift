@@ -153,7 +153,7 @@ final class ViewControllerScreen: UIView {
 
     let toLearn = [
         "Manipulate the header",
-        "Create a single page",
+        "Create a single app",
         "SwiftUI and UIKit",
         "Reproduze old projects",
         "More of tests"

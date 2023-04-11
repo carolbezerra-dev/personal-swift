@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    let barTitle = "Lições Aprendidas"
+    let barTitle = "Lessons Learned"
 
     var body: some View {
         NavigationView { // sem isso, o título some
@@ -27,7 +27,7 @@ struct ContentView: View {
                         ImageComponent(
                             image: "carol-tw-2022",
                             name: "Carol Bezerra",
-                            link: "https://www.linkedin.com/in/carolbezerra-dev/"
+                            link: "https://www.linkedin.com/in/carolbezerra-dev/?locale=en_US"
                         )
 
                         ItemComponent(
@@ -40,7 +40,7 @@ struct ContentView: View {
                             ],
                             toLearn: [
                                 "Manipulate the header",
-                                "Create a single page",
+                                "Create a single app",
                                 "SwiftUI and UIKit",
                                 "Reproduze old projects",
                                 "More of tests"
@@ -48,8 +48,8 @@ struct ContentView: View {
                         )
 
                         TextComponent(
-                            longText: "Esse texto é muito longo e, inicialmente, não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialemente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela.",
-                            shortText: "Texto pequeno só para testar"
+                            longText: "This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen.",
+                            shortText: "Small text just for testing"
                         )
                     }
 
