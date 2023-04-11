@@ -9,6 +9,22 @@ import UIKit
 
 final class ViewControllerScreen: UIView {
 
+    lazy var scroll: UIScrollView = {
+        let scroll = UIScrollView()
+
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+
+        return scroll
+    }()
+
+    lazy var content: UIView = {
+        let content = UIView()
+
+        content.translatesAutoresizingMaskIntoConstraints = false
+
+        return content
+    }()
+
     lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         imageView.image = UIImage(named: "carol-tw-2022")
@@ -145,6 +161,7 @@ final class ViewControllerScreen: UIView {
         let longText = UILabel()
 
         longText.text = "Esse texto é muito longo e, inicialmente, não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialemente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela."
+        longText.numberOfLines = 0
 
         longText.translatesAutoresizingMaskIntoConstraints = false
 
@@ -181,61 +198,80 @@ final class ViewControllerScreen: UIView {
             // adiciona cada item na StackView
         }
 
+        // MARK: - Scroll
+
+        addSubview(scroll)
+
+        scroll.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        scroll.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        scroll.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        scroll.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+
+        // MARK: - Content
+
+        scroll.addSubview(content)
+
+        content.topAnchor.constraint(equalTo: scroll.topAnchor).isActive = true
+        content.bottomAnchor.constraint(equalTo: scroll.bottomAnchor).isActive = true
+        content.leadingAnchor.constraint(equalTo: scroll.leadingAnchor).isActive = true
+        content.trailingAnchor.constraint(equalTo: scroll.trailingAnchor).isActive = true
+        content.centerXAnchor.constraint(equalTo: scroll.centerXAnchor).isActive = true
+
         // MARK: - Image
 
-        addSubview(imageView)
+        content.addSubview(imageView)
 
         imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: content.topAnchor, constant: 50).isActive = true
 
         // MARK: - Link
 
-        addSubview(link)
+        content.addSubview(link)
 
         link.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
-        link.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        link.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 140).isActive = true
+        link.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
+        link.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 140).isActive = true
 
         // MARK: - Lessons List Title
 
-        addSubview(lessonsList)
+        content.addSubview(lessonsList)
 
         lessonsList.topAnchor.constraint(equalTo: link.bottomAnchor, constant: 30).isActive = true
-        lessonsList.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        lessonsList.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
 
         // MARK: - Lessons List Items
 
-        addSubview(itemsStackView)
+        content.addSubview(itemsStackView)
 
         itemsStackView.topAnchor.constraint(equalTo: lessonsList.bottomAnchor, constant: 20).isActive = true
-        itemsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        itemsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        itemsStackView.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 20).isActive = true
+        itemsStackView.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
 
         // MARK: - I want to learn Title
 
-        addSubview(wantToLearn)
+        content.addSubview(wantToLearn)
 
         wantToLearn.topAnchor.constraint(equalTo: itemsStackView.bottomAnchor, constant: 30).isActive = true
-        wantToLearn.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        wantToLearn.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
 
         // MARK: - I want to learn Items
 
-        addSubview(toLearnStackView) // adiciona a StackView na View como um todo
+        content.addSubview(toLearnStackView) // adiciona a StackView na View como um todo
 
         toLearnStackView.topAnchor.constraint(equalTo: wantToLearn.bottomAnchor, constant: 20).isActive = true
-        toLearnStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        toLearnStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        toLearnStackView.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 20).isActive = true
+        toLearnStackView.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
 
         // MARK: - Long text
 
-        addSubview(longText)
+        content.addSubview(longText)
 
         longText.topAnchor.constraint(equalTo: toLearnStackView.bottomAnchor, constant: 20).isActive = true
-        longText.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor).isActive = true
-        longText.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        longText.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        longText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor).isActive = true
+        longText.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 20).isActive = true
+        longText.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
     }
 
     @objc func clickLink() {
