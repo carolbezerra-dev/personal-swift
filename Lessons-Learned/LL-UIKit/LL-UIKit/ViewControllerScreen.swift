@@ -160,12 +160,23 @@ final class ViewControllerScreen: UIView {
     lazy var longText: UILabel = {
         let longText = UILabel()
 
-        longText.text = "Esse texto é muito longo e, inicialmente, não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialemente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela. Esse texto é muito longo e, inicialmente, ele não seria exibido inteiro. Mas vamos colocar nil para limite de linhas, assim será possível visualizar o texto inteiro na tela."
+        longText.text = "This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen."
         longText.numberOfLines = 0
 
         longText.translatesAutoresizingMaskIntoConstraints = false
 
         return longText
+    }()
+
+    lazy var shortText: UILabel = {
+        let shortText = UILabel()
+
+        shortText.text = "Short text just for testing"
+        shortText.font = .italicSystemFont(ofSize: 17.0)
+
+        shortText.translatesAutoresizingMaskIntoConstraints = false
+
+        return shortText
     }()
 
     let toLearn = [
@@ -272,6 +283,16 @@ final class ViewControllerScreen: UIView {
         longText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor).isActive = true
         longText.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 20).isActive = true
         longText.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
+
+        // MARK: - Short text
+
+        content.addSubview(shortText)
+
+        shortText.topAnchor.constraint(equalTo: longText.bottomAnchor, constant: 20).isActive = true
+        /// ajustar para que o texto apareça no 
+//        shortText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor).isActive = true
+        shortText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor, constant: -50).isActive = true
+        shortText.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
     }
 
     @objc func clickLink() {
