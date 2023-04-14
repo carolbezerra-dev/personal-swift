@@ -214,7 +214,7 @@ final class ViewControllerScreen: UIView {
         addSubview(scroll)
 
         scroll.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        scroll.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        scroll.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         scroll.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         scroll.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
@@ -232,18 +232,18 @@ final class ViewControllerScreen: UIView {
 
         content.addSubview(imageView)
 
-        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: content.topAnchor, constant: 50).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
 
         // MARK: - Link
 
         content.addSubview(link)
 
         link.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
-        link.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         link.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 140).isActive = true
+        link.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
 
         // MARK: - Lessons List Title
 
@@ -280,7 +280,6 @@ final class ViewControllerScreen: UIView {
         content.addSubview(longText)
 
         longText.topAnchor.constraint(equalTo: toLearnStackView.bottomAnchor, constant: 20).isActive = true
-        longText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor).isActive = true
         longText.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 20).isActive = true
         longText.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
 
@@ -289,9 +288,7 @@ final class ViewControllerScreen: UIView {
         content.addSubview(shortText)
 
         shortText.topAnchor.constraint(equalTo: longText.bottomAnchor, constant: 20).isActive = true
-        /// ajustar para que o texto apareça no 
-//        shortText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor).isActive = true
-        shortText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor, constant: -50).isActive = true
+        shortText.bottomAnchor.constraint(greaterThanOrEqualTo: content.bottomAnchor, constant: -20).isActive = true
         shortText.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -20).isActive = true
     }
 
