@@ -22,7 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         navigationController.pushViewController(viewController, animated: true)
 
-        window.rootViewController = viewController
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .green
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
+
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
         self.window = window
