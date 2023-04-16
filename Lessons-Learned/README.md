@@ -4,6 +4,17 @@
 
 <img src="./simulation.gif" width="200">
 
+## What I practiced with this project:
+
+- Manipulate Safe Area
+- Manipulate NavBar, background color and add title
+- Work with Scroll View
+- Manipulate Image (size, position, circle, border)
+- Add external link
+- Add lists and texts (long and short)
+- Manipulate font style (size, weight, design, color, alignment)
+- Work with spaces (padding, constraints)
+
 ## Mandatory Requirements - The app must have:
 
 ### 1 - specific background color
