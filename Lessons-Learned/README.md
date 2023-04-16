@@ -15,7 +15,9 @@
 - Manipulate font style (size, weight, design, color, alignment)
 - Work with spaces (padding, constraints)
 
-## Mandatory Requirements - The app must have:
+### Device used during development: iPhone 14 Pro by Simulator
+
+## The app must have:
 
 ### 1 - specific background color
 
