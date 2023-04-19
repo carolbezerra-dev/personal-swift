@@ -39,17 +39,17 @@ struct ContentView: View {
                                 "TDD"
                             ],
                             toLearn: [
-                                "Manipulate the header",
+                                "Manipulate navbar",
                                 "Create a single app",
-                                "SwiftUI and UIKit",
-                                "Reproduze old projects",
+                                "Constraints",
+                                "Reproduce old projects",
                                 "More of tests"
                             ]
                         )
 
                         TextComponent(
-                            longText: "This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen.",
-                            shortText: "Short text just for testing"
+                            longText: "This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen.",
+                            shortText: "Short text like signature"
                         )
                     }
 

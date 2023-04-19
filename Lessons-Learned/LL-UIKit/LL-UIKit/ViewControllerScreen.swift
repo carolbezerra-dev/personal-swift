@@ -60,7 +60,7 @@ final class ViewControllerScreen: UIView {
     lazy var lessonsList: UILabel = {
         let lessonsList = UILabel()
 
-        lessonsList.text = "Lições Aprendidas"
+        lessonsList.text = "Lessons Learned"
         lessonsList.textAlignment = .center
         lessonsList.font = .boldSystemFont(ofSize: 18)
 
@@ -160,7 +160,7 @@ final class ViewControllerScreen: UIView {
     lazy var longText: UILabel = {
         let longText = UILabel()
 
-        longText.text = "This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil for the line limit, so it will be possible to view the entire text on the screen."
+        longText.text = "This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen. This text is too long and initially would not display in full. But let's put nil in line limit, so it will be possible to view the entire text on the screen."
         longText.numberOfLines = 0
 
         longText.translatesAutoresizingMaskIntoConstraints = false
@@ -171,7 +171,7 @@ final class ViewControllerScreen: UIView {
     lazy var shortText: UILabel = {
         let shortText = UILabel()
 
-        shortText.text = "Short text just for testing"
+        shortText.text = "Short text like signature"
         shortText.font = .italicSystemFont(ofSize: 17.0)
 
         shortText.translatesAutoresizingMaskIntoConstraints = false
@@ -180,10 +180,10 @@ final class ViewControllerScreen: UIView {
     }()
 
     let toLearn = [
-        "Manipulate the header",
+        "Manipulate navbar",
         "Create a single app",
-        "SwiftUI and UIKit",
-        "Reproduze old projects",
+        "Constraints",
+        "Reproduce old projects",
         "More of tests"
     ]
 
