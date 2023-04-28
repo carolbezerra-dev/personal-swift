@@ -1,7 +1,7 @@
 # Welcome to To Do List Project!
 
 ## Goal
-Adapt this [Web screen](https://carreiras.magazineluiza.com.br/vagas/308322-ux-designer-jr?utm_campaign=newsletter_-_abr_2023&utm_medium=email&utm_source=RD%20Station) to Mobile version, keeping the main characteristics.
+Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-end/1.Fundamentals/5.DOM-Selectors/ToDo-List/) to Mobile version, keeping the main characteristics.
 
 <img src="./webversion.gif" width="400">
 
