@@ -25,10 +25,15 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 ### 1 - a title
 
 - "My To Do List"
+- font Dancing Script
+- size 30
 
 ### 2 - an instruction
 
-- phrase: "Click 2x in an completed item"
+- phrase: "Double-tap in an completed item"
+- font Dancing Script
+- size 16
+- color darksalmon
 
 ### 3 - an text field to add item in the list
 
