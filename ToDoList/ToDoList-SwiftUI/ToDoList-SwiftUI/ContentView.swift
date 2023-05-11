@@ -46,12 +46,12 @@ struct ContentView: View {
 
                         Text("My To Do List")
                             .font(
-                                .custom("Dancing Script", size: 30, relativeTo: .headline)
+                                .custom("DancingScript-Bold", size: 30, relativeTo: .headline)
                             )
 
                         Text("Double-tap in a completed item")
                             .font(
-                                .custom("Dancing Script", size: 16, relativeTo: .subheadline)
+                                .custom("DancingScript-Regular", size: 20, relativeTo: .subheadline)
                             )
                             .foregroundColor(Color("darksalmon"))
                     }
