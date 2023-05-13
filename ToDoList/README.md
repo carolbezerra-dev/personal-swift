@@ -52,7 +52,7 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 
 - all items are replaced with a blank line
 
-### 6 - when tapping on an item in the list:
+### 6 - when tapping on an item of the list:
 
 - change the background color to `rgb gray (128,128,128)`
 - undo this action by tapping the item again

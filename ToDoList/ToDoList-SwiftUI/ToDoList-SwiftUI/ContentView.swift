@@ -8,45 +8,68 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var username: String = ""
+    @State private var toDo: String = ""
+    @State private var toDoList: [String] = []
 
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
 
-                    TextField("", text: $username)
-                        .padding(5)
+                VStack {
+                    Text(" ")
+                    Divider()
+                        .frame(width: 200, height: 4)
+                        .overlay(Color("darksalmon"))
+
+                    Text("My To Do List")
+                        .font(
+                            .custom("DancingScript-Bold", size: 30, relativeTo: .headline)
+                        )
+
+                    Text("Double-tap in a completed item")
+                        .font(
+                            .custom("DancingScript-Regular", size: 16, relativeTo: .subheadline)
+                        )
+                        .foregroundColor(Color("darksalmon"))
+                }
+
+                HStack {
+                    TextField("", text: $toDo)
+                        .padding(8)
                         .overlay(
                             RoundedRectangle(cornerRadius: 200)
                                 .stroke(Color("darkviolet"), lineWidth: 2)
                         )
 
                     Button {
-                        print("pressed")
+                        toDo == "" ? nil : toDoList.append(toDo)
+                        toDo = ""
                     } label: {
-                        Image(systemName: "plus.rectangle.fill").font(.system(size: 30))
+                        Image(systemName: "plus.rectangle.fill")
+                            .font(.system(size: 30))
                     }
                 }
-                .padding([.top], 50)
-                .padding([.bottom], 25)
-                .padding([.trailing, .leading], 10)
+                .padding([.top], 10)
+                .padding([.trailing, .leading], 35)
 
                 List {
-                    Text("A List Item")
-                    Text("A Second List Item")
-                    Text("A Third List Item")
+                    ForEach(toDoList, id: \.self) { task in
+                        Text(task)
+                    }.onDelete { item in
+                        toDoList.remove(atOffsets: item)
+                    }
                 }
-                .listStyle(.automatic)
+                .scrollContentBackground(.hidden)
+                .padding([.trailing, .leading], 15)
 
                 Button {
-                    print("delete all")
+                    toDoList.removeAll()
                 } label: {
                     HStack {
                         Text("Yeah, it is done!")
                             .tint(.pink)
                             .fontWeight(.semibold)
-                        Image(systemName: "flame")
+                        Image(systemName: "flame.fill")
                             .font(.system(size: 20))
                             .tint(.pink)
                     }
@@ -56,31 +79,11 @@ struct ContentView: View {
                         RoundedRectangle(cornerRadius: 10).fill(.pink)
                     )
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-
-                ToolbarItem(placement: .principal) {
-                    VStack {
-
-                        Text(" ")
-                        Divider()
-                            .frame(width: 200, height: 4)
-                            .overlay(Color("darksalmon"))
-
-                        Text("My To Do List")
-                            .font(
-                                .custom("DancingScript-Bold", size: 30, relativeTo: .headline)
-                            )
-
-                        Text("Double-tap in a completed item")
-                            .font(
-                                .custom("DancingScript-Regular", size: 16, relativeTo: .subheadline)
-                            )
-                            .foregroundColor(Color("darksalmon"))
-                    }
-                }
-            }
+            }.background(
+                Image("ToDoList")
+                    .resizable()
+                    .ignoresSafeArea()
+            )
         }
     }
 }
