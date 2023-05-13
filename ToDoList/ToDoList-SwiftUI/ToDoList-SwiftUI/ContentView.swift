@@ -22,16 +22,40 @@ struct ContentView: View {
                                 .stroke(Color("darkviolet"), lineWidth: 2)
                         )
 
-                    Button(role: nil) {
+                    Button {
                         print("pressed")
                     } label: {
                         Image(systemName: "plus.rectangle.fill").font(.system(size: 30))
                     }
                 }
-                .padding([.top, .bottom], 50)
+                .padding([.top], 50)
+                .padding([.bottom], 25)
                 .padding([.trailing, .leading], 10)
 
-                Spacer()
+                List {
+                    Text("A List Item")
+                    Text("A Second List Item")
+                    Text("A Third List Item")
+                }
+                .listStyle(.automatic)
+
+                Button {
+                    print("delete all")
+                } label: {
+                    HStack {
+                        Text("Yeah, it is done!")
+                            .tint(.pink)
+                            .fontWeight(.semibold)
+                        Image(systemName: "flame")
+                            .font(.system(size: 20))
+                            .tint(.pink)
+                    }
+                    .padding(5)
+                    .foregroundColor(.white)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10).fill(.pink)
+                    )
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -51,13 +75,12 @@ struct ContentView: View {
 
                         Text("Double-tap in a completed item")
                             .font(
-                                .custom("DancingScript-Regular", size: 20, relativeTo: .subheadline)
+                                .custom("DancingScript-Regular", size: 16, relativeTo: .subheadline)
                             )
                             .foregroundColor(Color("darksalmon"))
                     }
                 }
             }
-
         }
     }
 }

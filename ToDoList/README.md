@@ -40,8 +40,8 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 ### 3 - an text field to add item in the list
 
 - color `darkviolet`
-- border `width 2` 
-- `corner radius`
+- border width `2` 
+- corner `radius`
 
 ### 4 - a button, when tapping:
 
