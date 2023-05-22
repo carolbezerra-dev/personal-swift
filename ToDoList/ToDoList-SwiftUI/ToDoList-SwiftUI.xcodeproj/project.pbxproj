@@ -15,6 +15,7 @@
 		8709AED22A0D918C00E341FE /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8709AECE2A0D918C00E341FE /* DancingScript-Medium.ttf */; };
 		8709AED32A0D918C00E341FE /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8709AECF2A0D918C00E341FE /* DancingScript-Regular.ttf */; };
 		8709AED42A0D918C00E341FE /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8709AED02A0D918C00E341FE /* DancingScript-Bold.ttf */; };
+		877DBDAE2A1C050F005EDC58 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBDAD2A1C050F005EDC58 /* IndieFlower-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8709AECF2A0D918C00E341FE /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Regular.ttf"; path = "../../../Dancing_Script/static/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
 		8709AED02A0D918C00E341FE /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Bold.ttf"; path = "../../../Dancing_Script/static/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
 		8709AED52A0D926200E341FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		877DBDAD2A1C050F005EDC58 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IndieFlower-Regular.ttf"; path = "../../../Indie_Flower/IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				8709AECE2A0D918C00E341FE /* DancingScript-Medium.ttf */,
 				8709AECF2A0D918C00E341FE /* DancingScript-Regular.ttf */,
 				8709AECD2A0D918C00E341FE /* DancingScript-SemiBold.ttf */,
+				877DBDAD2A1C050F005EDC58 /* IndieFlower-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877DBDAE2A1C050F005EDC58 /* IndieFlower-Regular.ttf in Resources */,
 				8709AEAE2A0D873500E341FE /* Preview Assets.xcassets in Resources */,
 				8709AED12A0D918C00E341FE /* DancingScript-SemiBold.ttf in Resources */,
 				8709AEAB2A0D873500E341FE /* Assets.xcassets in Resources */,

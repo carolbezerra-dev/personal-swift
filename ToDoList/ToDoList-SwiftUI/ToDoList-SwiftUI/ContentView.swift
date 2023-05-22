@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var toDo: String = ""
     @State private var toDoList: [String] = []
+    @State private var selectedTask: String?
+    @State private var toggle: Bool = false
 
     var body: some View {
         NavigationView {
@@ -54,8 +56,37 @@ struct ContentView: View {
 
                 List {
                     ForEach(toDoList, id: \.self) { task in
+//                        Button(action: {
+//                            self.selectedFruit = task
+//                        }, label: {
+//                            Text(task)
+//                                .font(
+//                                    .custom("IndieFlower", size: 20)
+//                                )
+//                                .foregroundColor(Color("crimson"))
+//                        })
+//                        .listRowBackground(self.selectedFruit == task
+//                                           ? Color("limoncello")
+//                                           : Color(.systemGroupedBackground)
+//                        )
                         Text(task)
-                    }.onDelete { item in
+                            .font(
+                                .custom("IndieFlower", size: 20)
+                            )
+                            .foregroundColor(Color("crimson"))
+                            .onTapGesture {
+                                self.selectedTask = task
+                            }
+                            .listRowBackground(self.selectedTask == task
+                                               ? Color("limoncello")
+                                               : Color(.systemGroupedBackground)
+                            )
+                            .strikethrough(toggle)
+                            .onLongPressGesture(perform: {
+                                self.toggle = !toggle
+                            })
+                    }
+                    .onDelete { item in
                         toDoList.remove(atOffsets: item)
                     }
                 }

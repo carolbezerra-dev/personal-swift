@@ -11,6 +11,7 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 
 ## What I practiced with this project:
 
+- Add image as background
 - Add custom font and color
 - Manipulate TextField
 - Manipulate Buttons
@@ -55,12 +56,12 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 ### 6 - when tapping on an item of the list:
 
 - change the background color to `rgb gray (128,128,128)`
-- undo this action by tapping the item again
+- only one task can be selected by once
 
-### 7 - when double-tapping on an item in the list:
+### 7 - when long press on an item in the list:
 
 - it should be `strikethrough (crossed out)`, indicating that it has been completed
-- undo this action by double-tapping the item again
+- more than one task can be completed at same time
 
 ### 8 - delete one item:
 
