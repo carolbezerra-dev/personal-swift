@@ -1,0 +1,70 @@
+//
+//  UserDefaultsHelper.swift
+//  ToDoList-SwiftUI
+//
+//  Created by Carol Bezerra on 24/05/23.
+//
+
+import Foundation
+
+struct UserDefaultsHelper {
+
+    private var userDefaults: UserDefaults = UserDefaults.standard
+
+    func addTask(_ toDoList: [Task]) {
+        do {
+            // Create JSON Encoder
+            let encoder = JSONEncoder()
+
+            // Encode Note
+            let data = try encoder.encode(toDoList)
+
+            // Write/Set Data
+            userDefaults.set(data, forKey: "SavedList")
+
+        } catch {
+            print("Unable to Encode ToDoList (\(error))")
+        }
+    }
+
+    func getTasks() -> [Task] {
+        if let list = userDefaults.data(forKey: "SavedList") {
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Decode Note
+                let toDoList = try decoder.decode([Task].self, from: list)
+
+                return toDoList
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+        return []
+    }
+
+    func update(_ toDoList: [Task]) {
+        do {
+            // Create JSON Encoder
+            let encoder = JSONEncoder()
+
+            // Encode Note
+            let data = try encoder.encode(toDoList)
+
+            // Write/Set Data
+            userDefaults.set(data, forKey: "SavedList")
+            userDefaults.synchronize()
+
+        } catch {
+            print("Unable to Encode Array of Notes (\(error))")
+        }
+    }
+
+    func removeAll() {
+//        userDefaults.removeObject(forKey: "SavedList")
+        UserDefaults.resetStandardUserDefaults()
+//        userDefaults.removePersistentDomain(forName: "SavedList")
+//        userDefaults.synchronize()
+    }
+}

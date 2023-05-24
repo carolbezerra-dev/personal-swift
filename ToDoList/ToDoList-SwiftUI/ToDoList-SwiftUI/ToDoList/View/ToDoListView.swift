@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ToDoListView.swift
 //  ToDo-SwiftUI
 //
 //  Created by Carol Bezerra on 30/04/23.
@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ToDoListView: View {
     @State private var toDo: String = ""
-    @State private var toDoList: [String] = []
-    @State private var selectedTask: String?
-    @State private var toggle: Bool = false
+    @StateObject var toDoListViewModel = ToDoListViewModel()
 
     var body: some View {
         NavigationView {
@@ -44,7 +42,7 @@ struct ContentView: View {
                         )
 
                     Button {
-                        toDo == "" ? nil : toDoList.append(toDo)
+                        toDoListViewModel.addNewTask(toDo)
                         toDo = ""
                     } label: {
                         Image(systemName: "plus.rectangle.fill")
@@ -55,46 +53,18 @@ struct ContentView: View {
                 .padding([.trailing, .leading], 35)
 
                 List {
-                    ForEach(toDoList, id: \.self) { task in
-//                        Button(action: {
-//                            self.selectedFruit = task
-//                        }, label: {
-//                            Text(task)
-//                                .font(
-//                                    .custom("IndieFlower", size: 20)
-//                                )
-//                                .foregroundColor(Color("crimson"))
-//                        })
-//                        .listRowBackground(self.selectedFruit == task
-//                                           ? Color("limoncello")
-//                                           : Color(.systemGroupedBackground)
-//                        )
-                        Text(task)
-                            .font(
-                                .custom("IndieFlower", size: 20)
-                            )
-                            .foregroundColor(Color("crimson"))
-                            .onTapGesture {
-                                self.selectedTask = task
-                            }
-                            .listRowBackground(self.selectedTask == task
-                                               ? Color("limoncello")
-                                               : Color(.systemGroupedBackground)
-                            )
-                            .strikethrough(toggle)
-                            .onLongPressGesture(perform: {
-                                self.toggle = !toggle
-                            })
+                    ForEach(toDoListViewModel.toDoList, id: \.id) { task in
+                        TaskCellView(task: task)
                     }
-                    .onDelete { item in
-                        toDoList.remove(atOffsets: item)
+                    .onDelete { toDo in
+                        toDoListViewModel.removeOne(toDo)
                     }
                 }
                 .scrollContentBackground(.hidden)
                 .padding([.trailing, .leading], 15)
 
                 Button {
-                    toDoList.removeAll()
+                    toDoListViewModel.removeAllTasks()
                 } label: {
                     HStack {
                         Text("Yeah, it is done!")
@@ -119,8 +89,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ToDoListView()
     }
 }
