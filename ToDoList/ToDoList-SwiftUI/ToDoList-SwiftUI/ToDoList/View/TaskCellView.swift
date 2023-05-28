@@ -22,9 +22,10 @@ struct TaskCellView: View {
             .onTapGesture {
                 self.selected.toggle()
             }
-            .listRowBackground(selected
-                               ? Color("limoncello")
-                               : Color(.systemGroupedBackground)
+            .listRowBackground(
+                selected
+                ? Color("limoncello")
+                : Color(.systemGroupedBackground)
             )
             .strikethrough(completed)
             .onLongPressGesture(perform: {
