@@ -23,7 +23,7 @@ class ToDoListViewModel: ObservableObject {
     func addNewTask(_ toDo: String) {
 
         toDo == "" ? nil : toDoList.append(Task(id: UUID(), value: toDo))
-        userDefaultsHelper.addTask(toDoList)
+        userDefaultsHelper.add(toDoList)
     }
 
     func removeOne(_ toDo: IndexSet) {

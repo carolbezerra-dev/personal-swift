@@ -1,5 +1,5 @@
 //
-//  TaskCellView.swift
+//  ToDoCellView.swift
 //  ToDoList-SwiftUI
 //
 //  Created by Carol Bezerra on 24/05/23.
@@ -34,7 +34,7 @@ struct ToDoCellView: View {
     }
 }
 
-struct TaskCellView_Previews: PreviewProvider {
+struct ToDoCellView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoCellView(task: Task(id: UUID(), value: ""))
     }

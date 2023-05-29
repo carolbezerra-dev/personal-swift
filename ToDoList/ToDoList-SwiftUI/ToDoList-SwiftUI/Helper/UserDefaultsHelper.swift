@@ -11,7 +11,7 @@ struct UserDefaultsHelper {
 
     private var userDefaults: UserDefaults = UserDefaults.standard
 
-    func addTask(_ toDoList: [Task]) {
+    func add(_ toDoList: [Task]) {
         do {
             // Create JSON Encoder
             let encoder = JSONEncoder()
@@ -38,7 +38,7 @@ struct UserDefaultsHelper {
 
                 return toDoList
             } catch {
-                print("Unable to Decode Note (\(error))")
+                print("Unable to Decode ToDoList (\(error))")
             }
         }
         return []
@@ -57,14 +57,11 @@ struct UserDefaultsHelper {
             userDefaults.synchronize()
 
         } catch {
-            print("Unable to Encode Array of Notes (\(error))")
+            print("Unable to Encode ToDoList (\(error))")
         }
     }
 
     func removeAll() {
-//        userDefaults.removeObject(forKey: "SavedList")
-        UserDefaults.resetStandardUserDefaults()
-//        userDefaults.removePersistentDomain(forName: "SavedList")
-//        userDefaults.synchronize()
+        userDefaults.removeObject(forKey: "SavedList")
     }
 }

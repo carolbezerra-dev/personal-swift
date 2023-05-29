@@ -15,10 +15,11 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 - Add custom font and color
 - Manipulate TextField
 - Manipulate Buttons
-- Manipulate Gestures (tap, double-tap and swipe)
+- Manipulate Gestures (tap, long press and swipe)
 - Work with List
 - Add, delete one and delete all items
-- Persist data with Core Data
+- Persist data using UserDefaults (SwiftUI)
+- Persist data using Core Data (ViewCode)
 
 ### Device used during development: iPhone 14 Pro by Xcode Simulator
 
@@ -28,13 +29,13 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 
 - put a overline
 - `"My To Do List"`
-- font `Dancing Script`
+- font `Dancing Script - Bold`
 - `size 30`
 
 ### 2 - an instruction
 
-- `"Double-tap in a completed item"`
-- font `Dancing Script`
+- `"Long press in a completed item"`
+- font `Dancing Script - Regular`
 - size `16`
 - color `darksalmon`
 
@@ -44,27 +45,37 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 - border width `2` 
 - corner `radius`
 
-### 4 - a button, when tapping:
+### 4 - add button, when tapped:
 
 - a new item must be created at the end of the list
 - text field must be cleared
 
-### 5 - a button to delete all items from the list
+### 5 - list item:
 
-- all items are replaced with a blank line
+- font `IndieFlower`
+- size `20`
+- color `crimson`
 
-### 6 - when tapping on an item of the list:
+### 6 - delete all button, when tapped:
 
-- change the background color to `rgb gray (128,128,128)`
+- all items are replaced for a blank line
+
+### 7 - when tapping on an item of the list:
+
+- change the background color to `rgb gray (255, 255, 131) - limoncello`
 - only one task can be selected by once
 
-### 7 - when long press on an item in the list:
+### 8 - when long press on an item in the list:
 
 - it should be `strikethrough (crossed out)`, indicating that it has been completed
 - more than one task can be completed at same time
 
-### 8 - delete one item:
+### 9 - delete one item:
 
 - when swiping to left, it should delete this specific item from the list
 
-### 9 - if you close and reopen the app, the list should continue as it was
+### 10 - if you close and reopen the app, the list should continue as it was
+
+- persist items
+- persist completed items
+- do not persist selected items

@@ -17,7 +17,7 @@
 		8709AED42A0D918C00E341FE /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8709AED02A0D918C00E341FE /* DancingScript-Bold.ttf */; };
 		877DBDAE2A1C050F005EDC58 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBDAD2A1C050F005EDC58 /* IndieFlower-Regular.ttf */; };
 		877DBDB02A1EBD3C005EDC58 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDAF2A1EBD3C005EDC58 /* Task.swift */; };
-		877DBDB22A1EC044005EDC58 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDB12A1EC044005EDC58 /* TaskCellView.swift */; };
+		877DBDB22A1EC044005EDC58 /* ToDoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDB12A1EC044005EDC58 /* ToDoCellView.swift */; };
 		877DBDB82A1EC2FE005EDC58 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDB72A1EC2FE005EDC58 /* ToDoListViewModel.swift */; };
 		877DBDBB2A1ECA80005EDC58 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDBA2A1ECA80005EDC58 /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		8709AED52A0D926200E341FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		877DBDAD2A1C050F005EDC58 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IndieFlower-Regular.ttf"; path = "../../../Indie_Flower/IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		877DBDAF2A1EBD3C005EDC58 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		877DBDB12A1EC044005EDC58 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		877DBDB12A1EC044005EDC58 /* ToDoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCellView.swift; sourceTree = "<group>"; };
 		877DBDB72A1EC2FE005EDC58 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		877DBDBA2A1ECA80005EDC58 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,10 +72,10 @@
 			children = (
 				877DBDB32A1EC22E005EDC58 /* ToDoList */,
 				877DBDB92A1ECA54005EDC58 /* Helper */,
-				8709AEB42A0D8D4300E341FE /* Fonts */,
 				8709AEA62A0D873300E341FE /* ToDoList_SwiftUIApp.swift */,
 				8709AEAA2A0D873500E341FE /* Assets.xcassets */,
 				8709AED52A0D926200E341FE /* Info.plist */,
+				8709AEB42A0D8D4300E341FE /* Fonts */,
 				8709AEAC2A0D873500E341FE /* Preview Content */,
 			);
 			path = "ToDoList-SwiftUI";
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8709AEA82A0D873300E341FE /* ToDoListView.swift */,
-				877DBDB12A1EC044005EDC58 /* TaskCellView.swift */,
+				877DBDB12A1EC044005EDC58 /* ToDoCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				8709AEA92A0D873300E341FE /* ToDoListView.swift in Sources */,
 				877DBDB02A1EBD3C005EDC58 /* Task.swift in Sources */,
 				8709AEA72A0D873300E341FE /* ToDoList_SwiftUIApp.swift in Sources */,
-				877DBDB22A1EC044005EDC58 /* TaskCellView.swift in Sources */,
+				877DBDB22A1EC044005EDC58 /* ToDoCellView.swift in Sources */,
 				877DBDB82A1EC2FE005EDC58 /* ToDoListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

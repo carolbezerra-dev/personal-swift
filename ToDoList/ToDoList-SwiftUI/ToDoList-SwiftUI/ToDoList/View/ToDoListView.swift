@@ -26,7 +26,7 @@ struct ToDoListView: View {
                             .custom("DancingScript-Bold", size: 30, relativeTo: .headline)
                         )
 
-                    Text("Double-tap in a completed item")
+                    Text("Long press in a completed item")
                         .font(
                             .custom("DancingScript-Regular", size: 16, relativeTo: .subheadline)
                         )
@@ -54,7 +54,7 @@ struct ToDoListView: View {
 
                 List {
                     ForEach(toDoListViewModel.toDoList, id: \.id) { task in
-                        TaskCellView(task: task)
+                        ToDoCellView(task: task)
                     }
                     .onDelete { toDo in
                         toDoListViewModel.removeOne(toDo)
