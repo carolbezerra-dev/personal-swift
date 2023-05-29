@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TaskCellView: View {
+struct ToDoCellView: View {
 
     var task: Task
     @State var selected: Bool = false
@@ -36,6 +36,6 @@ struct TaskCellView: View {
 
 struct TaskCellView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCellView(task: Task(id: UUID(), value: ""))
+        ToDoCellView(task: Task(id: UUID(), value: ""))
     }
 }
