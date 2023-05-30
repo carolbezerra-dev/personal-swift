@@ -62,13 +62,15 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 
 ### 7 - when tapping on an item of the list:
 
-- change the background color to `rgb gray (255, 255, 131) - limoncello`
-- only one task can be selected by once
+- change the background color to `rgb limoncello (255, 255, 131)`
+- more than one task can be selected at same time
+- if the task is selected and you tap again, background color should be changed to `systemGroupedBackground`
 
 ### 8 - when long press on an item in the list:
 
 - it should be `strikethrough (crossed out)`, indicating that it has been completed
 - more than one task can be completed at same time
+- if the task is completed and you long press again, the `strikethrough (crossed out)` should be removed
 
 ### 9 - delete one item:
 
