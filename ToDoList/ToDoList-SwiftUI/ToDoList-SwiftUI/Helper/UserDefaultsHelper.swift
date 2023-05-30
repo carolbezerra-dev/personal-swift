@@ -16,7 +16,7 @@ struct UserDefaultsHelper {
             // Create JSON Encoder
             let encoder = JSONEncoder()
 
-            // Encode Note
+            // Encode toDoList
             let data = try encoder.encode(toDoList)
 
             // Write/Set Data
@@ -33,7 +33,7 @@ struct UserDefaultsHelper {
                 // Create JSON Decoder
                 let decoder = JSONDecoder()
 
-                // Decode Note
+                // Decode toDoList
                 let toDoList = try decoder.decode([Task].self, from: list)
 
                 return toDoList

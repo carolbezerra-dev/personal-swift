@@ -14,26 +14,29 @@ class ToDoListViewModel: ObservableObject {
     @Published private(set) var toDoList: [Task] = []
 
     init() {
-
         userDefaultsHelper = UserDefaultsHelper()
         let savedList = userDefaultsHelper.getTasks()
         toDoList = savedList
     }
 
     func addNewTask(_ toDo: String) {
-
         toDo == "" ? nil : toDoList.append(Task(id: UUID(), value: toDo))
         userDefaultsHelper.add(toDoList)
     }
 
-    func removeOne(_ toDo: IndexSet) {
+    func update(toDo: Task) {
+        if let i = toDoList.firstIndex(of: toDo) {
+            toDoList[i] = toDo
+            userDefaultsHelper.update(toDoList)
+        }
+    }
 
+    func removeOne(_ toDo: IndexSet) {
         toDoList.remove(atOffsets: toDo)
         userDefaultsHelper.update(toDoList)
     }
 
     func removeAllTasks() {
-        
         toDoList.removeAll()
         userDefaultsHelper.removeAll()
     }

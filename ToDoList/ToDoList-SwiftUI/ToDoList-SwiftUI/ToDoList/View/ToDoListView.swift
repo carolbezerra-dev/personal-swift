@@ -53,11 +53,13 @@ struct ToDoListView: View {
                 .padding([.trailing, .leading], 35)
 
                 List {
-                    ForEach(toDoListViewModel.toDoList, id: \.id) { task in
-                        ToDoCellView(task: task)
+                    ForEach(toDoListViewModel.toDoList, id: \.id) { toDo in
+                        ToDoCellView(task: toDo) { task in
+                            toDoListViewModel.update(toDo: task)
+                        }
                     }
-                    .onDelete { toDo in
-                        toDoListViewModel.removeOne(toDo)
+                    .onDelete { task in
+                        toDoListViewModel.removeOne(task)
                     }
                 }
                 .scrollContentBackground(.hidden)

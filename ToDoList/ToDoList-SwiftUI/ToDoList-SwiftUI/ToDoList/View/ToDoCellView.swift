@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ToDoCellView: View {
 
-    var task: Task
+    @State var task: Task
+    var action: ((Task) -> Void)?
     @State var selected: Bool = false
     @State var completed: Bool = false
 
@@ -27,15 +28,21 @@ struct ToDoCellView: View {
                 ? Color("limoncello")
                 : Color(.systemGroupedBackground)
             )
-            .strikethrough(completed)
+            .strikethrough(task.completed)
             .onLongPressGesture(perform: {
-                self.completed.toggle()
+                longPressPerform()
             })
+    }
+
+    private func longPressPerform() {
+        task.completed.toggle()
+        action?(task)
+        self.completed.toggle()
     }
 }
 
 struct ToDoCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoCellView(task: Task(id: UUID(), value: ""))
+        ToDoCellView(task: Task(id: UUID(), value: "", completed: false))
     }
 }
