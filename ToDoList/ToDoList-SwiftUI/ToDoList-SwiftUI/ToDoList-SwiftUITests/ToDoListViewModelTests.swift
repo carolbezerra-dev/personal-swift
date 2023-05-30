@@ -5,17 +5,18 @@
 //  Created by Carol Bezerra on 30/05/23.
 //
 
-@testable import ToDoListViewModel
 import XCTest
+@testable import ToDoList_SwiftUI
 
 final class ToDoListViewModelTests: XCTestCase {
 
     private var toDoListViewModel: ToDoListViewModel!
     private var toDoList: [Task] = []
 
-    override func setUpWithError() throws {
+    // MARK: - Settings
+
+    override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        super.setUpWithError()
         toDoListViewModel = ToDoListViewModel()
         toDoList = [
             Task(id: UUID(), value: "study Swift", completed: false),
@@ -23,38 +24,76 @@ final class ToDoListViewModelTests: XCTestCase {
         ]
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         toDoListViewModel = nil
         toDoList = []
-        super.tearDownWithError()
     }
 
-    func testAdd_shouldAddNewTaskInToDoList() {
+    // MARK: - Add Method
+
+    func testAdd_shouldNotAddEmptyTask() {
+        // GIVEN THE TASK IS EMPTY
+        let value = ""
+
+        // WHEN TAP ON ADD BUTTON
+        toDoListViewModel.addNewTask(value)
+
+        // THEN TASK IS NOT ADDED IN TODOLIST
+        XCTAssertEqual(toDoList.count, 2)
+        XCTAssertEqual(toDoList.last?.value, "LinkedIn post")
+    }
+
+    func testAdd_shouldAddNewTask() {
         // GIVEN USER WRITE A TASK
         let value = "read book chapter"
 
         // WHEN TAP ON ADD BUTTON
         toDoListViewModel.addNewTask(value)
+        print(toDoList)
 
         // THEN TASK IS ADDED IN TODOLIST
         XCTAssertEqual(toDoList.count, 3)
-        XCTAssertEqual(toDoList.last.value, "read book chapter")
+        XCTAssertEqual(toDoList.last?.value, "read book chapter")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    // MARK: - Update Method
+
+    func testUpdate_shouldUpdateTaskWhenCompleted() {
+        // GIVEN THE TASK IS COMPLETED
+        var task = toDoList[0]
+        task.completed = true
+
+        // WHEN USER MAKES A LONG PRESS
+        toDoListViewModel.update(toDo: task)
+
+        // THEN TASK IS UPDATED IN TODOLIST
+        XCTAssertTrue(toDoList[0].completed)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    // MARK: - RemoveOne Method
+
+    func testRemoveOne_shoulRemoveASpecificTask() {
+        // GIVEN TODOLIST HAS AT LEAST 1 TASK
+        XCTAssertEqual(toDoList.count, 2)
+
+        // WHEN USER SWIPE TO DELETE
+//        toDoListViewModel.removeOne() o que colocar como parâmetro?
+
+        // THEN THIS SPECIFIC TASK IS DELETED
+        XCTAssertEqual(toDoList.count, 1)
     }
 
+    // MARK: - RemoveAll Method
+
+    func testRemoveAll_shouldEmptyToDoList() {
+        // GIVEN TODOLIST HAS AT LEAST 1 TASK
+        XCTAssertEqual(toDoList.count, 2)
+
+        // WHEN TAP ON IT'S DONE BUTTON
+        toDoListViewModel.removeAllTasks()
+
+        // THEN THIS SPECIFIC TASK IS DELETED
+        XCTAssertEqual(toDoList.count, 0)
+    }
 }
