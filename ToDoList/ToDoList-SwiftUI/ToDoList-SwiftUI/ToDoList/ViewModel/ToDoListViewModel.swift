@@ -10,11 +10,11 @@ import SwiftUI
 
 class ToDoListViewModel: ObservableObject {
 
-    private var userDefaultsHelper: UserDefaultsHelper
+    private var userDefaultsHelper: UserDefaultsHelperProtocol
     @Published private(set) var toDoList: [Task] = []
 
-    init() {
-        userDefaultsHelper = UserDefaultsHelper()
+    init(userDefaults: UserDefaultsHelperProtocol = UserDefaultsHelper()) {
+        self.userDefaultsHelper = userDefaults
         let savedList = userDefaultsHelper.getTasks()
         toDoList = savedList
     }

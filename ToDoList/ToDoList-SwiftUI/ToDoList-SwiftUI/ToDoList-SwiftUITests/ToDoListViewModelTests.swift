@@ -11,13 +11,15 @@ import XCTest
 final class ToDoListViewModelTests: XCTestCase {
 
     private var toDoListViewModel: ToDoListViewModel!
+    private var userDefaultsMock: UserDefaultsHelperMock!
     private var toDoList: [Task] = []
 
     // MARK: - Settings
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        toDoListViewModel = ToDoListViewModel()
+        userDefaultsMock = UserDefaultsHelperMock()
+        toDoListViewModel = ToDoListViewModel(userDefaults: userDefaultsMock)
         toDoList = [
             Task(id: UUID(), value: "study Swift", completed: false),
             Task(id: UUID(), value: "LinkedIn post", completed: false)
@@ -26,6 +28,7 @@ final class ToDoListViewModelTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        userDefaultsMock = nil
         toDoListViewModel = nil
         toDoList = []
     }

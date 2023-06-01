@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserDefaultsHelper {
+struct UserDefaultsHelper: UserDefaultsHelperProtocol {
 
     private var userDefaults: UserDefaults = UserDefaults.standard
 

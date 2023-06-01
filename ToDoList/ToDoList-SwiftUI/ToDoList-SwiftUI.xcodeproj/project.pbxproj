@@ -20,8 +20,9 @@
 		877DBDB22A1EC044005EDC58 /* ToDoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDB12A1EC044005EDC58 /* ToDoCellView.swift */; };
 		877DBDB82A1EC2FE005EDC58 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDB72A1EC2FE005EDC58 /* ToDoListViewModel.swift */; };
 		877DBDBB2A1ECA80005EDC58 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDBA2A1ECA80005EDC58 /* UserDefaultsHelper.swift */; };
-		877DBDC32A268AF1005EDC58 /* ToDoList_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDC22A268AF1005EDC58 /* ToDoList_SwiftUITests.swift */; };
 		877DBDCA2A268B89005EDC58 /* ToDoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDC92A268B89005EDC58 /* ToDoListViewModelTests.swift */; };
+		877DBDE02A295943005EDC58 /* UserDefaultsHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDDF2A295943005EDC58 /* UserDefaultsHelperProtocol.swift */; };
+		877DBDE32A2959E5005EDC58 /* UserDefaultsHelperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBDE22A2959E5005EDC58 /* UserDefaultsHelperMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,9 @@
 		877DBDB72A1EC2FE005EDC58 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		877DBDBA2A1ECA80005EDC58 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		877DBDC02A268AF1005EDC58 /* ToDoList-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		877DBDC22A268AF1005EDC58 /* ToDoList_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList_SwiftUITests.swift; sourceTree = "<group>"; };
 		877DBDC92A268B89005EDC58 /* ToDoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModelTests.swift; sourceTree = "<group>"; };
+		877DBDDF2A295943005EDC58 /* UserDefaultsHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelperProtocol.swift; sourceTree = "<group>"; };
+		877DBDE22A2959E5005EDC58 /* UserDefaultsHelperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelperMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				877DBDBA2A1ECA80005EDC58 /* UserDefaultsHelper.swift */,
+				877DBDDF2A295943005EDC58 /* UserDefaultsHelperProtocol.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -171,10 +174,18 @@
 		877DBDC12A268AF1005EDC58 /* ToDoList-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				877DBDC22A268AF1005EDC58 /* ToDoList_SwiftUITests.swift */,
+				877DBDE12A2959A2005EDC58 /* Mock */,
 				877DBDC92A268B89005EDC58 /* ToDoListViewModelTests.swift */,
 			);
 			path = "ToDoList-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		877DBDE12A2959A2005EDC58 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				877DBDE22A2959E5005EDC58 /* UserDefaultsHelperMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877DBDE02A295943005EDC58 /* UserDefaultsHelperProtocol.swift in Sources */,
 				877DBDBB2A1ECA80005EDC58 /* UserDefaultsHelper.swift in Sources */,
 				8709AEA92A0D873300E341FE /* ToDoListView.swift in Sources */,
 				877DBDB02A1EBD3C005EDC58 /* Task.swift in Sources */,
@@ -295,8 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877DBDE32A2959E5005EDC58 /* UserDefaultsHelperMock.swift in Sources */,
 				877DBDCA2A268B89005EDC58 /* ToDoListViewModelTests.swift in Sources */,
-				877DBDC32A268AF1005EDC58 /* ToDoList_SwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
