@@ -64,7 +64,7 @@ final class ToDoListViewModelTests: XCTestCase {
 
         // AND THIS ONE IS COMPLETED
         toDoCellView = ToDoCellView(task: toDoListViewModel.toDoList.first!)
-        toDoCellView.longPressPerform()
+//        toDoCellView.longPressPerform()
         toDoCellView.completed = true
 //        toDoListViewModel.toDoList.first!.completed = true
         // como simular gesture?
@@ -74,7 +74,7 @@ final class ToDoListViewModelTests: XCTestCase {
 
         // THEN TASK IS UPDATED IN TODOLIST
         print("TASK")
-        print(toDoListViewModel.toDoList.first!)
+//        print(toDoListViewModel.toDoList.first!)
         XCTAssertTrue(toDoListViewModel.toDoList.first!.completed)
     }
 
@@ -87,7 +87,9 @@ final class ToDoListViewModelTests: XCTestCase {
         XCTAssertEqual(toDoListViewModel.toDoList.count, 1)
 
         // WHEN USER SWIPE TO DELETE
-        toDoListViewModel.removeOne(IndexSet(toDoListViewModel.toDoList))
+        var index = IndexSet()
+        index.insert(toDoListViewModel.toDoList.count - 1)
+        toDoListViewModel.removeOne(index)
 
         // THEN THE TASK IS DELETED
         XCTAssertEqual(toDoListViewModel.toDoList.count, 0)
@@ -98,7 +100,7 @@ final class ToDoListViewModelTests: XCTestCase {
         var value = "read book chapter"
         toDoListViewModel.addNewTask(value)
 
-        value = "read book chapter"
+        value = "study graduate course"
         toDoListViewModel.addNewTask(value)
 
         value = "get ready to interview"
@@ -107,13 +109,15 @@ final class ToDoListViewModelTests: XCTestCase {
         XCTAssertEqual(toDoListViewModel.toDoList.count, 3)
 
         // WHEN USER SWIPE TO DELETE A SPECIFIC TASK
-//        toDoListViewModel.removeOne() o que colocar como parâmetro?
+        var index = IndexSet()
+        index.insert(1)
+        toDoListViewModel.removeOne(index)
 
         // THEN THIS SPECIFIC TASK IS DELETED
         XCTAssertEqual(toDoListViewModel.toDoList.count, 2)
         XCTAssertTrue(toDoListViewModel.toDoList.first?.value == "read book chapter")
         XCTAssertTrue(toDoListViewModel.toDoList.last?.value == "get ready to interview")
-        XCTAssertFalse(toDoListViewModel.toDoList[1].value == "read book chapter")
+        XCTAssertFalse(toDoListViewModel.toDoList[1].value == "study graduate course")
     }
 
     // MARK: - RemoveAll Method
