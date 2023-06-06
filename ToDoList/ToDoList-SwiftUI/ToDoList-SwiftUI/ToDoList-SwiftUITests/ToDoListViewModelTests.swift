@@ -12,7 +12,6 @@ final class ToDoListViewModelTests: XCTestCase {
 
     private var toDoListViewModel: ToDoListViewModel!
     private var userDefaultsMock: UserDefaultsHelperMock!
-    private var toDoCellView: ToDoCellView!
 
     // MARK: - Settings
 
@@ -26,7 +25,6 @@ final class ToDoListViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         userDefaultsMock = nil
         toDoListViewModel = nil
-        toDoCellView = nil
     }
 
     // MARK: - Add Method
@@ -63,18 +61,13 @@ final class ToDoListViewModelTests: XCTestCase {
         XCTAssertEqual(toDoListViewModel.toDoList.count, 1)
 
         // AND THIS ONE IS COMPLETED
-        toDoCellView = ToDoCellView(task: toDoListViewModel.toDoList.first!)
-//        toDoCellView.longPressPerform()
-        toDoCellView.completed = true
-//        toDoListViewModel.toDoList.first!.completed = true
-        // como simular gesture?
+        var task = toDoListViewModel.toDoList.first!
+        task.completed = true
 
         // WHEN USER MAKES A LONG PRESS
-        toDoListViewModel.update(toDo: toDoListViewModel.toDoList.first!)
+        toDoListViewModel.update(toDo: task)
 
         // THEN TASK IS UPDATED IN TODOLIST
-        print("TASK")
-//        print(toDoListViewModel.toDoList.first!)
         XCTAssertTrue(toDoListViewModel.toDoList.first!.completed)
     }
 
