@@ -19,7 +19,7 @@ Adapt this [Web screen](https://carolbezerra-dev.github.io/trybe-projects-front-
 - Work with List
 - Add, delete one and delete all items
 - Persist data using UserDefaults (SwiftUI)
-- Persist data using Core Data (ViewCode)
+- Persist data using Core Data (UIKit)
 
 ### Device used during development: iPhone 14 Pro by Xcode Simulator
 

@@ -15,6 +15,12 @@
 		877DBE082A311373005EDC58 /* ToDoList_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBE072A311373005EDC58 /* ToDoList_UIKitTests.swift */; };
 		877DBE122A311373005EDC58 /* ToDoList_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBE112A311373005EDC58 /* ToDoList_UIKitUITests.swift */; };
 		877DBE142A311373005EDC58 /* ToDoList_UIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBE132A311373005EDC58 /* ToDoList_UIKitUITestsLaunchTests.swift */; };
+		877DBE212A3118ED005EDC58 /* ViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBE202A3118ED005EDC58 /* ViewControllerScreen.swift */; };
+		877DBE262A312D80005EDC58 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE252A312D80005EDC58 /* IndieFlower-Regular.ttf */; };
+		877DBE2B2A312EB2005EDC58 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE272A312EB1005EDC58 /* DancingScript-Bold.ttf */; };
+		877DBE2C2A312EB2005EDC58 /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE282A312EB1005EDC58 /* DancingScript-Medium.ttf */; };
+		877DBE2D2A312EB2005EDC58 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE292A312EB1005EDC58 /* DancingScript-SemiBold.ttf */; };
+		877DBE2E2A312EB2005EDC58 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE2A2A312EB1005EDC58 /* DancingScript-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		877DBE0D2A311373005EDC58 /* ToDoList-UIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList-UIKitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		877DBE112A311373005EDC58 /* ToDoList_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList_UIKitUITests.swift; sourceTree = "<group>"; };
 		877DBE132A311373005EDC58 /* ToDoList_UIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList_UIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		877DBE202A3118ED005EDC58 /* ViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerScreen.swift; sourceTree = "<group>"; };
+		877DBE252A312D80005EDC58 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IndieFlower-Regular.ttf"; path = "../../Indie_Flower/IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
+		877DBE272A312EB1005EDC58 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Bold.ttf"; path = "../../Dancing_Script/static/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		877DBE282A312EB1005EDC58 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Medium.ttf"; path = "../../Dancing_Script/static/DancingScript-Medium.ttf"; sourceTree = "<group>"; };
+		877DBE292A312EB1005EDC58 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-SemiBold.ttf"; path = "../../Dancing_Script/static/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
+		877DBE2A2A312EB1005EDC58 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Regular.ttf"; path = "../../Dancing_Script/static/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				877DBDEF2A31136F005EDC58 /* ToDoList-UIKit */,
+				877DBE222A312D2F005EDC58 /* Fonts */,
 				877DBE062A311373005EDC58 /* ToDoList-UIKitTests */,
 				877DBE102A311373005EDC58 /* ToDoList-UIKitUITests */,
 				877DBDEE2A31136F005EDC58 /* Products */,
@@ -100,6 +113,7 @@
 				877DBDF02A31136F005EDC58 /* AppDelegate.swift */,
 				877DBDF22A31136F005EDC58 /* SceneDelegate.swift */,
 				877DBDF42A31136F005EDC58 /* ViewController.swift */,
+				877DBE202A3118ED005EDC58 /* ViewControllerScreen.swift */,
 				877DBDF92A311372005EDC58 /* Assets.xcassets */,
 				877DBDFB2A311372005EDC58 /* LaunchScreen.storyboard */,
 				877DBDFE2A311372005EDC58 /* Info.plist */,
@@ -122,6 +136,18 @@
 				877DBE132A311373005EDC58 /* ToDoList_UIKitUITestsLaunchTests.swift */,
 			);
 			path = "ToDoList-UIKitUITests";
+			sourceTree = "<group>";
+		};
+		877DBE222A312D2F005EDC58 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				877DBE272A312EB1005EDC58 /* DancingScript-Bold.ttf */,
+				877DBE282A312EB1005EDC58 /* DancingScript-Medium.ttf */,
+				877DBE2A2A312EB1005EDC58 /* DancingScript-Regular.ttf */,
+				877DBE292A312EB1005EDC58 /* DancingScript-SemiBold.ttf */,
+				877DBE252A312D80005EDC58 /* IndieFlower-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				877DBDFD2A311372005EDC58 /* LaunchScreen.storyboard in Resources */,
+				877DBE2D2A312EB2005EDC58 /* DancingScript-SemiBold.ttf in Resources */,
+				877DBE2B2A312EB2005EDC58 /* DancingScript-Bold.ttf in Resources */,
+				877DBE2E2A312EB2005EDC58 /* DancingScript-Regular.ttf in Resources */,
+				877DBE262A312D80005EDC58 /* IndieFlower-Regular.ttf in Resources */,
+				877DBE2C2A312EB2005EDC58 /* DancingScript-Medium.ttf in Resources */,
 				877DBDFA2A311372005EDC58 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877DBE212A3118ED005EDC58 /* ViewControllerScreen.swift in Sources */,
 				877DBDF52A31136F005EDC58 /* ViewController.swift in Sources */,
 				877DBDF12A31136F005EDC58 /* AppDelegate.swift in Sources */,
 				877DBDF32A31136F005EDC58 /* SceneDelegate.swift in Sources */,
@@ -430,6 +462,7 @@
 				INFOPLIST_FILE = "ToDoList-UIKit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,6 +490,7 @@
 				INFOPLIST_FILE = "ToDoList-UIKit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
