@@ -31,9 +31,10 @@ final class ViewControllerScreen: UIView {
         let title = UILabel()
 
         title.text = "My To Do List"
-//        title.font = UIFont(name: "DancingScript-Bold", size: 30)
-        title.textColor = .red
         title.textAlignment = .center
+        title.font = UIFont(name: "DancingScript-Bold", size: 30)
+
+        title.translatesAutoresizingMaskIntoConstraints = false
 
         return title
     }()
@@ -43,8 +44,49 @@ final class ViewControllerScreen: UIView {
 
         subtitle.text = "Long press in a completed item"
         subtitle.textColor = UIColor(named: "darksalmon")
+        subtitle.font = UIFont(name: "DancingScript-Regular", size: 16)
+
+        subtitle.translatesAutoresizingMaskIntoConstraints = false
 
         return subtitle
+    }()
+
+    lazy var textField: UITextField = {
+        let textField = UITextField()
+        let paddingView = UIView(frame: CGRectMake(8, 8, 8, textField.frame.height))
+
+        textField.layer.cornerRadius = 20
+        textField.layer.borderWidth = 2.0
+        textField.layer.borderColor = UIColor(named: "darkviolet")?.cgColor
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+
+        textField.translatesAutoresizingMaskIntoConstraints = false
+
+        return textField
+    }()
+
+    lazy var addButton: UIButton = {
+        let addButton = UIButton()
+        let styleConfig = UIImage.SymbolConfiguration(textStyle: .title1)
+        let icon = UIImage(systemName: "plus.rectangle.fill", withConfiguration: styleConfig)
+
+        addButton.setImage(icon, for: .normal)
+
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+
+        return addButton
+    }()
+
+    lazy var textStackView: UIStackView = {
+        let textStackView = UIStackView(arrangedSubviews: [textField, addButton])
+
+        textStackView.axis = .horizontal
+        textStackView.spacing = 8
+
+        textStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        return textStackView
     }()
 
     override init(frame: CGRect = .zero) {
@@ -73,14 +115,24 @@ final class ViewControllerScreen: UIView {
 
         backgroundImage.addSubview(title)
 
-        title.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 50).isActive = true
-        title.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor).isActive = true
-        title.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        title.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        title.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 110).isActive = true
         title.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         // MARK: - Subtitle
 
+        backgroundImage.addSubview(subtitle)
+
+        subtitle.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
+        subtitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+
+        // MARK: - Text StackView
+
+        backgroundImage.addSubview(textStackView)
+
+        textStackView.topAnchor.constraint(equalTo: subtitle.bottomAnchor, constant: 25).isActive = true
+        textStackView.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 35).isActive = true
+        textStackView.heightAnchor.constraint(equalToConstant: 43).isActive = true
+        textStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
     }
 
