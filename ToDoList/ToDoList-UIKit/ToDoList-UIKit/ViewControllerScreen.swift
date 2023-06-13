@@ -89,6 +89,21 @@ final class ViewControllerScreen: UIView {
         return textStackView
     }()
 
+    let tasks = [
+        "push code",
+        "read article",
+        "study about the company",
+        "check vacancy"
+    ]
+
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        return tableView
+    }()
+
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
 
@@ -133,6 +148,8 @@ final class ViewControllerScreen: UIView {
         textStackView.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 35).isActive = true
         textStackView.heightAnchor.constraint(equalToConstant: 43).isActive = true
         textStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+
+        // MARK: - List
 
     }
 
