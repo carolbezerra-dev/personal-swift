@@ -68,7 +68,7 @@ final class ViewControllerScreen: UIView {
 
     lazy var addButton: UIButton = {
         let addButton = UIButton()
-        let styleConfig = UIImage.SymbolConfiguration(textStyle: .title1)
+        let styleConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
         let icon = UIImage(systemName: "plus.rectangle.fill", withConfiguration: styleConfig)
 
         addButton.setImage(icon, for: .normal)
@@ -87,6 +87,25 @@ final class ViewControllerScreen: UIView {
         textStackView.translatesAutoresizingMaskIntoConstraints = false
 
         return textStackView
+    }()
+
+    lazy var deleteAllButton: UIButton = {
+        let deleteAllButton = UIButton()
+        let styleConfig = UIImage.SymbolConfiguration(textStyle: .title2)
+        let icon = UIImage(systemName: "flame.fill", withConfiguration: styleConfig)
+
+        deleteAllButton.setTitle("Yeah, it is done! ", for: .normal)
+        deleteAllButton.setImage(icon, for: .normal)
+
+        deleteAllButton.semanticContentAttribute = .forceRightToLeft
+        deleteAllButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
+        deleteAllButton.tintColor = .white
+        deleteAllButton.backgroundColor = .systemPink
+        deleteAllButton.layer.cornerRadius = 10
+
+        deleteAllButton.translatesAutoresizingMaskIntoConstraints = false
+
+        return deleteAllButton
     }()
 
     let tasks = [
@@ -150,6 +169,15 @@ final class ViewControllerScreen: UIView {
         textStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         // MARK: - List
+
+        // MARK: - Delete All Button
+
+        backgroundImage.addSubview(deleteAllButton)
+
+        deleteAllButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+        deleteAllButton.widthAnchor.constraint(equalToConstant: 168).isActive = true
+        deleteAllButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        deleteAllButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
     }
 
