@@ -89,6 +89,8 @@ final class ViewControllerScreen: UIView {
         return textStackView
     }()
 
+    // STACKVIEW em outro componente
+
     lazy var deleteAllButton: UIButton = {
         let deleteAllButton = UIButton()
         let styleConfig = UIImage.SymbolConfiguration(textStyle: .title2)
@@ -108,15 +110,13 @@ final class ViewControllerScreen: UIView {
         return deleteAllButton
     }()
 
-    let tasks = [
-        "push code",
-        "read article",
-        "study about the company",
-        "check vacancy"
-    ]
+    // DELETEALLBUTTON em outro componente
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+
+        tableView.backgroundColor = .clear
+        tableView.register(TaskViewCell.self, forCellReuseIdentifier: "cellId")
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -126,9 +126,15 @@ final class ViewControllerScreen: UIView {
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
 
-        // MARK: - Content
-
         addSubview(mainView)
+        mainView.addSubview(backgroundImage)
+        backgroundImage.addSubview(title)
+        backgroundImage.addSubview(subtitle)
+        backgroundImage.addSubview(textStackView)
+        backgroundImage.addSubview(tableView)
+        backgroundImage.addSubview(deleteAllButton)
+
+        // MARK: - Content
 
         mainView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         mainView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -136,8 +142,6 @@ final class ViewControllerScreen: UIView {
         mainView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
         // MARK: - Background Image
-
-        mainView.addSubview(backgroundImage)
 
         backgroundImage.topAnchor.constraint(equalTo: topAnchor).isActive = true
         backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -147,21 +151,15 @@ final class ViewControllerScreen: UIView {
 
         // MARK: - Title
 
-        backgroundImage.addSubview(title)
-
         title.topAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: 110).isActive = true
         title.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         // MARK: - Subtitle
 
-        backgroundImage.addSubview(subtitle)
-
         subtitle.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
         subtitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         // MARK: - Text StackView
-
-        backgroundImage.addSubview(textStackView)
 
         textStackView.topAnchor.constraint(equalTo: subtitle.bottomAnchor, constant: 25).isActive = true
         textStackView.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 35).isActive = true
@@ -170,14 +168,18 @@ final class ViewControllerScreen: UIView {
 
         // MARK: - List
 
-        // MARK: - Delete All Button
+        tableView.topAnchor.constraint(equalTo: textStackView.bottomAnchor, constant: 20).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: deleteAllButton.topAnchor, constant: -10).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 20).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor, constant: -20).isActive = true
+//        tableView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
-        backgroundImage.addSubview(deleteAllButton)
+        // MARK: - Delete All Button
 
         deleteAllButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         deleteAllButton.widthAnchor.constraint(equalToConstant: 168).isActive = true
         deleteAllButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        deleteAllButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        deleteAllButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
     }
 

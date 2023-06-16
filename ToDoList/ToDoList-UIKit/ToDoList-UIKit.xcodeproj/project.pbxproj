@@ -21,6 +21,7 @@
 		877DBE2C2A312EB2005EDC58 /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE282A312EB1005EDC58 /* DancingScript-Medium.ttf */; };
 		877DBE2D2A312EB2005EDC58 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE292A312EB1005EDC58 /* DancingScript-SemiBold.ttf */; };
 		877DBE2E2A312EB2005EDC58 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877DBE2A2A312EB1005EDC58 /* DancingScript-Regular.ttf */; };
+		877DBE322A3BBF7B005EDC58 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DBE312A3BBF7B005EDC58 /* TaskViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		877DBE282A312EB1005EDC58 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Medium.ttf"; path = "../../Dancing_Script/static/DancingScript-Medium.ttf"; sourceTree = "<group>"; };
 		877DBE292A312EB1005EDC58 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-SemiBold.ttf"; path = "../../Dancing_Script/static/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
 		877DBE2A2A312EB1005EDC58 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DancingScript-Regular.ttf"; path = "../../Dancing_Script/static/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		877DBE312A3BBF7B005EDC58 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				877DBDF22A31136F005EDC58 /* SceneDelegate.swift */,
 				877DBDF42A31136F005EDC58 /* ViewController.swift */,
 				877DBE202A3118ED005EDC58 /* ViewControllerScreen.swift */,
+				877DBE312A3BBF7B005EDC58 /* TaskViewCell.swift */,
 				877DBDF92A311372005EDC58 /* Assets.xcassets */,
 				877DBDFB2A311372005EDC58 /* LaunchScreen.storyboard */,
 				877DBDFE2A311372005EDC58 /* Info.plist */,
@@ -287,6 +290,7 @@
 			files = (
 				877DBE212A3118ED005EDC58 /* ViewControllerScreen.swift in Sources */,
 				877DBDF52A31136F005EDC58 /* ViewController.swift in Sources */,
+				877DBE322A3BBF7B005EDC58 /* TaskViewCell.swift in Sources */,
 				877DBDF12A31136F005EDC58 /* AppDelegate.swift in Sources */,
 				877DBDF32A31136F005EDC58 /* SceneDelegate.swift in Sources */,
 			);
@@ -465,6 +469,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,6 +498,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
