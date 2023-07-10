@@ -10,22 +10,35 @@ import UIKit
 class ViewController: UIViewController {
 
     let screen = ViewControllerScreen()
-    var tasks = [
-        "push code",
-        "read article",
-        "study about the company",
-        "check vacancy"
-    ]
+    let viewModel = ViewModel()
+    var tasks = [String]()
 
     override func loadView() {
         self.view = screen
-
-        screen.tableView.dataSource = self
-        screen.tableView.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        screen.tableView.dataSource = self
+        screen.tableView.delegate = self
+
+        screen.addNew = addNewTask
+        screen.removeAll = removeAllTasks
+    }
+
+    func addNewTask() {
+        let text = screen.textField.text
+        viewModel.addTask(toDo: text ?? "")
+        screen.textField.text = ""
+
+        tasks = viewModel.getTasks()
+        screen.tableView.reloadData()
+    }
+
+    func removeAllTasks() {
+        tasks = viewModel.removeTasks()
+        screen.tableView.reloadData()
     }
 }
 
@@ -35,11 +48,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = screen.tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! TaskViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! TaskViewCell
 
-        cell.task = tasks[indexPath.row]
-//        cell.taskLabel.text = tasks[indexPath.row]
+        cell.taskLabel.text = tasks[indexPath.row]
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
 }

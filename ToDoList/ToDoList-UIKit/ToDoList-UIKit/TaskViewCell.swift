@@ -21,9 +21,7 @@ class TaskViewCell: UITableViewCell {
         taskLabel.numberOfLines = 0
         taskLabel.font = UIFont.boldSystemFont(ofSize: 18)
         taskLabel.textColor = .purple
-        taskLabel.backgroundColor = .red
-
-        taskLabel.translatesAutoresizingMaskIntoConstraints = true
+        taskLabel.translatesAutoresizingMaskIntoConstraints = false
 
         return taskLabel
     }()
@@ -39,9 +37,9 @@ class TaskViewCell: UITableViewCell {
         taskLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
 
-//    override func prepareForReuse() {
-//        taskLabel.text = ""
-//    }
+    //    override func prepareForReuse() {
+    //        taskLabel.text = ""
+    //    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
