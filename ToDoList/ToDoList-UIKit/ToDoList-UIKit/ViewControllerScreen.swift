@@ -17,7 +17,7 @@ final class ViewControllerScreen: UIView {
 
         textField.layer.cornerRadius = 20
         textField.layer.borderWidth = 2.0
-        textField.layer.borderColor = UIColor(named: "darkviolet")?.cgColor
+        textField.layer.borderColor = Colors().purple?.cgColor
         textField.leftView = paddingView
         textField.leftViewMode = .always
 
@@ -29,7 +29,7 @@ final class ViewControllerScreen: UIView {
     lazy var addButton: UIButton = {
         let addButton = UIButton()
         let styleConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
-        let icon = UIImage(systemName: "plus.rectangle.fill", withConfiguration: styleConfig)
+        let icon = UIImage(systemName: Icons().plusButton, withConfiguration: styleConfig)
 
         addButton.setImage(icon, for: .normal)
 
@@ -44,7 +44,7 @@ final class ViewControllerScreen: UIView {
         let tableView = UITableView()
 
         tableView.backgroundColor = .clear
-        tableView.register(TaskViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(TaskViewCell.self, forCellReuseIdentifier: Identifier().forCellReuse)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -54,7 +54,7 @@ final class ViewControllerScreen: UIView {
     lazy var deleteAllButton: UIButton = {
         let deleteAllButton = UIButton()
         let styleConfig = UIImage.SymbolConfiguration(textStyle: .title2)
-        let icon = UIImage(systemName: "flame.fill", withConfiguration: styleConfig)
+        let icon = UIImage(systemName: Icons().flameButton, withConfiguration: styleConfig)
 
         deleteAllButton.setTitle(" Yeah, it is done! ", for: .normal)
         deleteAllButton.setImage(icon, for: .normal)

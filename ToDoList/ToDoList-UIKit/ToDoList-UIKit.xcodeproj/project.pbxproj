@@ -19,6 +19,7 @@
 		87CF310A2A5CA2A400DBB434 /* ViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF31092A5CA2A400DBB434 /* ViewControllerScreen.swift */; };
 		87CF310C2A5CA4A300DBB434 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF310B2A5CA4A300DBB434 /* ViewModel.swift */; };
 		87CF310E2A5CA4CF00DBB434 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF310D2A5CA4CF00DBB434 /* TaskViewCell.swift */; };
+		87CF31112A5F4C4C00DBB434 /* HardStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF31102A5F4C4C00DBB434 /* HardStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		87CF31092A5CA2A400DBB434 /* ViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerScreen.swift; sourceTree = "<group>"; };
 		87CF310B2A5CA4A300DBB434 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		87CF310D2A5CA4CF00DBB434 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
+		87CF31102A5F4C4C00DBB434 /* HardStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				87CF310D2A5CA4CF00DBB434 /* TaskViewCell.swift */,
 				87CF30DA2A5CA20F00DBB434 /* ViewController.swift */,
 				87CF31092A5CA2A400DBB434 /* ViewControllerScreen.swift */,
+				87CF31102A5F4C4C00DBB434 /* HardStrings.swift */,
 				87CF30E22A5CA21100DBB434 /* Assets.xcassets */,
 				87CF30E42A5CA21100DBB434 /* LaunchScreen.storyboard */,
 				87CF30E72A5CA21100DBB434 /* Info.plist */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87CF310A2A5CA2A400DBB434 /* ViewControllerScreen.swift in Sources */,
+				87CF31112A5F4C4C00DBB434 /* HardStrings.swift in Sources */,
 				87CF310E2A5CA4CF00DBB434 /* TaskViewCell.swift in Sources */,
 				87CF30DB2A5CA20F00DBB434 /* ViewController.swift in Sources */,
 				87CF30D72A5CA20F00DBB434 /* AppDelegate.swift in Sources */,
