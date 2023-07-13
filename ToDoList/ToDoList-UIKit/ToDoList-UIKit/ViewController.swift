@@ -11,8 +11,7 @@ class ViewController: UIViewController {
 
     let screen = ViewControllerScreen()
     let viewModel = ViewModel()
-//    var tasks = [String]()
-    var tasks = ["teste1", "teste2", "teste3", "teste4", "teste5"]
+    var tasks = [String]()
 
     override func loadView() {
         self.view = screen
@@ -61,7 +60,7 @@ class ViewController: UIViewController {
 //        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
 //        lpgr.minimumPressDuration = 0.5
 //        lpgr.delaysTouchesBegan = true
-////        lpgr.delegate = self
+//        lpgr.delegate = self
 //        screen.tableView.addGestureRecognizer(lpgr)
 //    }
 //
@@ -106,4 +105,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeOne(indexPath.row)
+            tasks = viewModel.getTasks()
+            screen.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

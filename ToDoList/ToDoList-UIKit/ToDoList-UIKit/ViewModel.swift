@@ -9,18 +9,21 @@ import Foundation
 
 class ViewModel {
 
-    private var tasks = [String]()
+    private var toDoList = [String]()
 
     func addTask(toDo: String) {
-        toDo == "" ? nil : tasks.append(toDo)
+        toDo == "" ? nil : toDoList.append(toDo)
     }
 
     func getTasks() -> [String] {
-        tasks
+        toDoList
     }
 
+    func removeOne(_ index: Int) {
+        toDoList.remove(at: index)    }
+
     func removeTasks() -> [String] {
-        tasks.removeAll()
-        return tasks
+        toDoList.removeAll()
+        return toDoList
     }
 }
