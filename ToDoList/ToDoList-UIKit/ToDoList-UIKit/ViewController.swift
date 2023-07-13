@@ -56,6 +56,25 @@ class ViewController: UIViewController {
             }
         }
     }
+
+//    private func setupLongGestureRecognizerOnCollection() {
+//        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+//        lpgr.minimumPressDuration = 0.5
+//        lpgr.delaysTouchesBegan = true
+////        lpgr.delegate = self
+//        screen.tableView.addGestureRecognizer(lpgr)
+//    }
+//
+//    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+//        guard gestureReconizer.state != .began else { return }
+//        let point = gestureReconizer.location(in: screen.tableView)
+//        let indexPath = screen.tableView.indexPathForItem(at: point)
+//        if let index = indexPath {
+//            print(index.row)
+//        } else {
+//            print("Could not find index path")
+//        }
+//    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -67,6 +86,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier().forCellReuse, for: indexPath) as! TaskViewCell
 
         cell.taskLabel.text = tasks[indexPath.row]
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -76,15 +96,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-
         let cell = tableView.cellForRow(at: indexPath) as! TaskViewCell
         cell.isTaskSelected.toggle()
 
         if cell.isTaskSelected {
             cell.backgroundColor = Colors().yellow
         } else {
-            cell.backgroundColor = .white
+            cell.backgroundColor = .clear
         }
     }
 
