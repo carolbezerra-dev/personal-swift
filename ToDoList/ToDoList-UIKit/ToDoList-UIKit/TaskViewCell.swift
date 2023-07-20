@@ -9,28 +9,7 @@ import UIKit
 
 class TaskViewCell: UITableViewCell {
 
-    var task: String? {
-        didSet {
-            taskLabel.text = task
-        }
-    }
-
-    var isTaskSelected: Bool = false
-
-    var isTaskCompleted: Bool = false {
-        didSet {
-
-            if isTaskCompleted {
-                let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: task ?? "")
-                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
-                taskLabel.attributedText = attributeString
-                taskLabel.textColor = .green
-            } else {
-                taskLabel.textColor = .cyan
-                taskLabel.text = task
-            }
-        }
-    }
+//    var task: Task?
 
     lazy var taskLabel: UILabel = {
         let taskLabel = UILabel()
@@ -52,6 +31,10 @@ class TaskViewCell: UITableViewCell {
         taskLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
         taskLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         taskLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+    }
+
+    override func prepareForReuse() {
+        taskLabel.text = ""
     }
 
     required init?(coder: NSCoder) {

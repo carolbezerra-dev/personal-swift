@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     let screen = ViewControllerScreen()
     let viewModel = ViewModel()
-    var tasks = [String]()
+    var tasks = [Task]()
 
     override func loadView() {
         self.view = screen
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
         screen.tableView.dataSource = self
         screen.tableView.delegate = self
+        screen.tableView.allowsMultipleSelection = true
 
         screen.addNew = addNewTask
         screen.removeAll = removeAllTasks
@@ -32,11 +33,13 @@ class ViewController: UIViewController {
 
     func addNewTask() {
         let text = screen.textField.text
+
         viewModel.addTask(toDo: text ?? "")
         screen.textField.text = ""
 
+        let indexPath = IndexPath(row: (tasks.count), section: 0)
         tasks = viewModel.getTasks()
-        screen.tableView.reloadData()
+        screen.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     func removeAllTasks() {
@@ -47,33 +50,27 @@ class ViewController: UIViewController {
     @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             let touchPoint = sender.location(in: screen.tableView)
+
             if let indexPath = screen.tableView.indexPathForRow(at: touchPoint) {
                 let cell = screen.tableView.dequeueReusableCell(withIdentifier: Identifier().forCellReuse, for: indexPath) as! TaskViewCell
+                let task = tasks[indexPath.row]
 
-                cell.isTaskCompleted.toggle()
+                task.isTaskCompleted.toggle()
+
+                if task.isTaskCompleted {
+                    let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: task.taskName)
+                    attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
+                    cell.taskLabel.attributedText = attributeString
+//                    cell.taskLabel.textColor = .green
+                } else {
+//                    cell.taskLabel.textColor = .cyan
+                    cell.taskLabel.text = task.taskName
+                }
+                
                 screen.tableView.reloadRows(at: [indexPath], with: .fade)
             }
         }
     }
-
-//    private func setupLongGestureRecognizerOnCollection() {
-//        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-//        lpgr.minimumPressDuration = 0.5
-//        lpgr.delaysTouchesBegan = true
-//        lpgr.delegate = self
-//        screen.tableView.addGestureRecognizer(lpgr)
-//    }
-//
-//    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-//        guard gestureReconizer.state != .began else { return }
-//        let point = gestureReconizer.location(in: screen.tableView)
-//        let indexPath = screen.tableView.indexPathForItem(at: point)
-//        if let index = indexPath {
-//            print(index.row)
-//        } else {
-//            print("Could not find index path")
-//        }
-//    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,7 +81,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier().forCellReuse, for: indexPath) as! TaskViewCell
 
-        cell.taskLabel.text = tasks[indexPath.row]
+        cell.taskLabel.text = tasks[indexPath.row].taskName
         cell.selectionStyle = .none
 
         return cell
@@ -96,9 +93,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! TaskViewCell
-        cell.isTaskSelected.toggle()
+        let task = tasks[indexPath.row]
 
-        if cell.isTaskSelected {
+        task.isTaskSelected.toggle()
+
+        if task.isTaskSelected {
             cell.backgroundColor = Colors().yellow
         } else {
             cell.backgroundColor = .clear

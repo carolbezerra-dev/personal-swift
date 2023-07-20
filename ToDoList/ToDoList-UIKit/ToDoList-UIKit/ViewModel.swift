@@ -9,20 +9,20 @@ import Foundation
 
 class ViewModel {
 
-    private var toDoList = [String]()
+    private var toDoList = [Task]()
 
     func addTask(toDo: String) {
-        toDo == "" ? nil : toDoList.append(toDo)
+        toDo == "" ? nil : toDoList.append(Task(taskName: toDo))
     }
 
-    func getTasks() -> [String] {
+    func getTasks() -> [Task] {
         toDoList
     }
 
     func removeOne(_ index: Int) {
         toDoList.remove(at: index)    }
 
-    func removeTasks() -> [String] {
+    func removeTasks() -> [Task] {
         toDoList.removeAll()
         return toDoList
     }
