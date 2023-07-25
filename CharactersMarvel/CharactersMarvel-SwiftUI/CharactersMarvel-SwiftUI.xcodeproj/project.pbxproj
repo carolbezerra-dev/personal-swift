@@ -16,6 +16,9 @@
 		87A5D80E2A6F24E200C4F633 /* CharactersMarvel_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D80D2A6F24E200C4F633 /* CharactersMarvel_SwiftUITests.swift */; };
 		87A5D8182A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D8172A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITests.swift */; };
 		87A5D81A2A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D8192A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITestsLaunchTests.swift */; };
+		87A5D8272A70153100C4F633 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D8262A70153100C4F633 /* CardView.swift */; };
+		87A5D8292A70284700C4F633 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D8282A70284700C4F633 /* Card.swift */; };
+		87A5D82B2A70418300C4F633 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D82A2A70418300C4F633 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		87A5D8132A6F24E200C4F633 /* CharactersMarvel-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CharactersMarvel-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A5D8172A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMarvel_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		87A5D8192A6F24E200C4F633 /* CharactersMarvel_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMarvel_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		87A5D8262A70153100C4F633 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		87A5D8282A70284700C4F633 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		87A5D82A2A70418300C4F633 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +107,12 @@
 				87A5D7F72A6F24DF00C4F633 /* CharactersMarvel_SwiftUIApp.swift */,
 				87A5D7F92A6F24DF00C4F633 /* ContentView.swift */,
 				87A5D8002A6F24E100C4F633 /* Persistence.swift */,
+				87A5D8262A70153100C4F633 /* CardView.swift */,
+				87A5D82A2A70418300C4F633 /* MainView.swift */,
 				87A5D7FB2A6F24E100C4F633 /* Assets.xcassets */,
 				87A5D8022A6F24E100C4F633 /* CharactersMarvel_SwiftUI.xcdatamodeld */,
 				87A5D7FD2A6F24E100C4F633 /* Preview Content */,
+				87A5D8282A70284700C4F633 /* Card.swift */,
 			);
 			path = "CharactersMarvel-SwiftUI";
 			sourceTree = "<group>";
@@ -264,7 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A5D8012A6F24E100C4F633 /* Persistence.swift in Sources */,
+				87A5D82B2A70418300C4F633 /* MainView.swift in Sources */,
+				87A5D8292A70284700C4F633 /* Card.swift in Sources */,
 				87A5D7FA2A6F24DF00C4F633 /* ContentView.swift in Sources */,
+				87A5D8272A70153100C4F633 /* CardView.swift in Sources */,
 				87A5D8042A6F24E100C4F633 /* CharactersMarvel_SwiftUI.xcdatamodeld in Sources */,
 				87A5D7F82A6F24DF00C4F633 /* CharactersMarvel_SwiftUIApp.swift in Sources */,
 			);

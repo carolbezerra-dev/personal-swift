@@ -2,7 +2,7 @@
 //  LL_SwiftUIApp.swift
 //  LL-SwiftUI
 //
-//  Created by Ana Pedroso on 04/04/23.
+//  Created by Carol Bezerra on 04/04/23.
 //
 
 import SwiftUI
